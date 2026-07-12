@@ -1,0 +1,16 @@
+services:
+  xtts:
+    build:
+      context: .
+
+    container_name: xtts
+
+    restart: "no"
+
+    volumes:
+      - ./models:/root/.local/share/tts
+      - ./input:/input
+      - ./output:/output
+
+    stdin_open: true
+    tty: true
